@@ -1,8 +1,19 @@
+/* Colors we like */
+$background:          #ffffff;
+$nav-background:      #101065;
+$nav-text:            #ffffff;
+$nav-text-highlight:  #e0e0ff;
+$text:                #222222;
+$header:              #101065;
+$light-header:        #18189a;
+$accent:              #d0f0f0;
+
 /* nice sticky footer, from http://getbootstrap.com/examples/sticky-footer/ */
 html, body {
-    height: 100%;
-    /* The html and body elements cannot have any padding or margin. */
+  height: 100%;
+/* The html and body elements cannot have any padding or margin. */
 }
+
 /* Wrapper for page content to push down footer */
 #wrap {
   min-height: 100%;
@@ -16,5 +27,138 @@ html, body {
 
 /* Set the fixed height of the footer here */
 footer[role=contentinfo] {
-    height: 60px;
+  height: 60px;
 }
+
+/* Custom fonts */
+h1, h2, h3, h4, h5, h6 {
+  color: $header;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+}
+p.lead {
+  color: $light-header;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+}
+body {
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+}
+
+/* Adjust the styling from the nav element */
+header[role=banner] {
+  background-color: $nav-background;
+  border: 0;
+  border-radius: 0;
+  border-bottom: 1px solid scale-lightness($nav-background, 30%);
+  padding: 0;
+
+  nav.navbar {
+    background: none;
+    border-radius: 0;
+    margin-bottom: 0;
+    padding: 0;
+
+    a.navbar-brand {
+      background-image: url('/images/logo-white-sm.png');
+      content: '';
+      height: 40px;
+      margin: 10px 0 5px 0;
+      width: 186px;
+    }
+
+    .navbar-nav > li > a {
+      color: $nav-text;
+      font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      margin: 20px 0 0 30px;
+      padding: 0;
+
+      &:hover {
+	color: $nav-text-highlight;
+	text-decoration: none;
+      }
+    }
+  }
+}
+
+/* Styling for the main argument block */
+#content {
+  margin: 20px 0;
+}
+
+/* Page header should be centered and set off from text */
+.page-header {
+  margin-bottom: 30px;
+  text-align: center;
+
+  h1 {
+    color: $header;
+    font-size: 48px;
+  }
+}
+
+/* First column text */
+.case-copy {
+  @extend .col-md-6;
+  font-size: 18px;
+}
+
+/* Second column form */
+.contact-form {
+  @extend .col-md-offset-1;
+  @extend .col-md-5;
+  @include border-radius(10px);
+  background-color: $accent;
+
+  h3 {
+    color: $header;
+    margin: 20px 0;
+    text-align: center;
+  }
+
+  p {
+    font-size: 18px;
+    margin: 0 15px 10px;
+  }
+
+  #mc_embed_signup {
+    background-color: inherit;
+    margin: 0 15px;
+
+    form {
+      padding-top: 0;
+
+      input.button {
+	@extend .btn;
+	@extend .btn-warning;
+	@extend .btn-lg;
+	@extend .btn-block;
+	font-size: 24px;
+	height: auto;
+	margin-top: 30px;
+      }
+
+      .mc-field-group {
+	@extend .form-group;
+	margin-bottom: 5px;
+
+	label, input {
+	  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	  font-size: 18px;
+	}
+      }
+    }
+  }
+
+  .hate-spam {
+    @extend .center-block;
+    @extend .text-info;
+    margin-top: 10px;
+    text-align: center;
+  }
+}
+
