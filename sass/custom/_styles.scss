@@ -150,6 +150,16 @@ header[role=banner] {
 	  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	  font-size: 18px;
 	}
+
+	label.error {
+	  @extend .text-warning;
+	  font-size: 14px;
+	  font-weight: normal;
+	  margin-left: 3px;
+	}
+	input.error {
+	  @extend .has-error;
+	}
       }
     }
   }
