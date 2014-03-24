@@ -1,40 +1,40 @@
 /* Colors we like */
-$background:          #ffffff;
-$nav-background:      #101065;
-$nav-text:            #ffffff;
-$nav-text-highlight:  #e0e0ff;
-$text:                #222222;
-$header:              #101065;
-$light-header:        #18189a;
-$accent:              #d0f0f0;
+$background:                 #ffffff;
+$nav-background:             #101065;
+$nav-text:                   #ffffff;
+$nav-text-highlight:         #e9e9ff;
+$text:                       #222222;
+$header:                     #101065;
+$header-highlight:           #18189a;
+$light-header:               #18189a;
+$sidebar-header-background:  #e9e9fc;
+$sidebar-header-text:        #222222;
+$sidebar-item-highlight:     #f6f6fe;
+$accent:                     #d0f0f0;
+
 
 /* nice sticky footer, from http://getbootstrap.com/examples/sticky-footer/ */
 html, body {
   height: 100%;
-/* The html and body elements cannot have any padding or margin. */
 }
-
-/* Wrapper for page content to push down footer */
 #wrap {
   min-height: 100%;
   height: auto !important;
   height: 100%;
-  /* Negative indent footer by its height */
   margin: 0 auto -60px;
-  /* Pad bottom by footer height */
   padding: 0 0 60px;
 }
-
-/* Set the fixed height of the footer here */
 footer[role=contentinfo] {
   height: 60px;
 }
+
 
 /* Custom fonts */
 h1, h2, h3, h4, h5, h6 {
   color: $header;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 700;
+  text-align: left;
 }
 p.lead {
   color: $light-header;
@@ -46,6 +46,7 @@ body {
   font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 400;
 }
+
 
 /* Adjust the styling from the nav element */
 header[role=banner] {
@@ -82,96 +83,202 @@ header[role=banner] {
 	text-decoration: none;
       }
     }
+
+    .navbar-nav > li.active > a {
+      background: none;
+      color: $nav-text-highlight;
+    }
   }
 }
+
 
 /* Styling for the main argument block */
 #content {
   margin: 20px 0;
 }
 
+
 /* Page header should be centered and set off from text */
 .page-header {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   text-align: center;
+
+  p.meta {
+    margin-bottom: 10px;
+  }
 
   h1 {
     color: $header;
     font-size: 48px;
+    text-shadow: 1px 1px 1px #ccc;
+
+    &.entry-title {
+      font-size: 36px;
+
+      a {
+	color: $header;
+      }
+
+      a:hover {
+	color: $header-highlight;
+	text-decoration: none;
+      }
+    }
   }
 }
 
-/* First column text */
-.case-copy {
-  @extend .col-md-6;
-  font-size: 18px;
+
+/* Space meta information out a little */
+p.meta {
+  margin-bottom: 10px;
+  text-align: left;
+
+  .glyphicon {
+    margin-left: 15px;
+  }
+
+  span:first-child {
+    margin-left: 0;
+  }
 }
 
-/* Second column form */
-.contact-form {
-  @extend .col-md-offset-1;
-  @extend .col-md-5;
-  @include border-radius(10px);
-  background-color: $accent;
 
-  h3 {
-    color: $header;
-    margin: 20px 0;
+/* Layouts for images and figures / images with captions */
+.page-content > img, .page-content > figure {
+  border-radius: 2px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+figure {
+  &.center {
+    display: table;
     text-align: center;
   }
 
-  p {
-    font-size: 18px;
-    margin: 0 15px 10px;
+  figcaption {
+    display: block;
+    font-size: 0.85em;
+    font-weight: bold;
+    margin-top: 8px;
+    text-align: center;
+  }
+}
+
+
+/* Sidebar formatting */
+.sidebar {
+
+  /* No formatting for ULs */
+  ul {
+    list-style: none;
+    padding-left: 0;
   }
 
-  #mc_embed_signup {
-    background-color: inherit;
-    margin: 0 15px;
+  /* Sidebar titles */
+  .panel-default > .panel-heading {
+    @include border-top-radius(5px);
+    background: $sidebar-header-background;
+    color: $sidebar-header-text;
+  }
 
-    form {
-      padding-top: 0;
+  /* Sidebar highlighted items */
+  a.list-group-item {
+    &.active, &:focus, &:hover {
+      background: $sidebar-item-highlight;
+      border-color: $sidebar-item-highlight;
+      color: $text;
+      text-shadow: none;
+    }
+  }
 
-      input.button {
-	@extend .btn;
-	@extend .btn-warning;
-	@extend .btn-lg;
-	@extend .btn-block;
-	font-size: 24px;
-	height: auto;
-	margin-top: 20px;
-      }
+  /* Pretty-up the Pinboard output */
+  #pinboard_linkroll {
+    .pin-title {
+      font-weight: bold;
+    }
+    .pin-description {
+      display: block;
+    }
+    .pin-tag {
+      display: none;
+    }
+  }
+}
 
-      .mc-field-group {
-	@extend .form-group;
-	margin-bottom: 5px;
 
-	label, input {
-	  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-	  font-size: 18px;
-	}
+/* MailChimp forms - general stuff */
+#mc_embed_signup {
+  background: rgba(255,255,255,0);
 
-	label.error {
-	  @extend .text-warning;
-	  font-size: 14px;
-	  font-weight: normal;
-	  margin-left: 3px;
-	}
-	input.error {
-	  @extend .has-error;
+  .indicates-required {
+    @extend .pull-right;
+    font-size: 14px;
+  }
+
+  span.asterisk {
+    @extend .glyphicon;
+    @extend .glyphicon-asterisk;
+    color: #cc6600;
+  }
+
+  form {
+    padding-top: 0;
+
+    label, input {
+      font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    label {
+      @extend .control-label;
+    }
+
+    input:not([type=submit]) {
+      @extend .form-control;
+    }
+
+    label.error {
+      @extend .text-warning;
+      font-size: 14px;
+      font-weight: normal;
+      margin-left: 3px;
+    }
+
+    input.error {
+      @extend .has-error;
+    }
+
+    input.button, input[type=submit], input[type=button] {
+      @extend .btn;
+      @extend .btn-warning;
+      @extend .btn-lg;
+      @extend .btn-block;
+      font-weight: bold;
+      height: auto;
+    }
+
+    .mc-field-group {
+      @extend .form-group;
+      margin-bottom: 5px;
+
+      &.required {
+	@extend .has-feedback;
+
+	span.asterisk {
+	  @extend .form-control-feedback;
 	}
       }
     }
   }
-
-  .hate-spam {
-    @extend .center-block;
-    @extend .text-info;
-    margin-top: 10px;
-    text-align: center;
-  }
+}
+.hate-spam {
+  @extend .center-block;
+  @extend .text-info;
+  margin-top: 10px;
+  text-align: center;
 }
 
+
+/* MailChimp modal dialogs */
 .mc-modal {
   @extend .modal;
 
@@ -202,6 +309,126 @@ header[role=banner] {
 
       p {
 	margin: 0 0 10px 0;
+      }
+    }
+  }
+}
+
+
+/* For the home page and other landing pages */
+body#home {
+
+  /* First column text */
+  .case-copy {
+    @extend .col-md-6;
+    font-size: 18px;
+  }
+
+  /* Second column form */
+  .contact-form {
+    @extend .col-md-offset-1;
+    @extend .col-md-5;
+    @include border-radius(10px);
+    background-color: $accent;
+
+    h3 {
+      color: $header;
+      margin: 20px 0;
+      text-align: center;
+    }
+
+    p {
+      font-size: 18px;
+      margin: 0 15px 10px;
+    }
+
+    #mc_embed_signup {
+      background: inherit;
+      margin: 20px 15px;
+
+      input.button {
+	font-size: 24px;
+	margin-top: 20px;
+      }
+
+      label, input {
+	font-size: 18px;
+      }
+
+      label.error {
+	font-size: 14px;
+      }
+    }
+  }
+}
+
+
+/* Common styles for blog pages */
+body#blog-index,
+body#blog-post,
+body#blog-archive {
+
+  /* Change style of the "More" button */
+  a[rel=full-article] {
+    @extend .btn-info;
+    @include border-radius(4px);
+  }
+
+  /* Get rid of the pill-like lower navigation */
+  .pager li>a, .pager li>span {
+    @include border-radius(8px);
+  }
+
+  #mc_embed_signup {
+    @include border-radius(8px);
+    background: blue;
+    margin: 0 200px;
+
+    form {
+      @extend .form-horizontal;
+
+      .mc-field-group {
+	margin-bottom: 2px;
+	min-height: auto;
+	padding: 0;
+
+	label, input:not([type=submit]) {
+	  @extend .input-sm;
+	  font-size: 14px;
+	  text-shadow: none;
+	}
+
+	label {
+	  max-width: 30%;
+	}
+
+	input:not([type=submit]) {
+	  width: 60%;
+	}
+
+	input.button, input[type=submit] {
+	  font-size: 18px;
+	  margin: 15px auto 0 auto;
+	  padding: 10px 16px;
+	  width: auto;
+	}
+      }
+    }
+  }
+}
+
+
+/* Styles for blog archive page */
+body#blog-archive {
+  h1 {
+    font-size: 32px;
+
+    a {
+      color: $header;
+
+      &:hover {
+	color: $header-highlight;
+	text-decoration: none;
       }
     }
   }

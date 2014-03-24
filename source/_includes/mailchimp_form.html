@@ -1,34 +1,70 @@
-<!-- Begin MailChimp Signup Form -->
-<link href="//cdn-images.mailchimp.com/embedcode/classic-081711.css" rel="stylesheet" type="text/css">
-<style type="text/css">
-  #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
-  /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
-     We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
-</style>
+<div id="mc-success-modal" class="mc-modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      </div>
+      <div class="modal-body">
+        <h4 class="modal-title">Thanks for Signing Up!</h4>
+        <p>
+	  Thanks so much for signing up to our mailing list.  You should be receiving a confirmation message shortly.
+	</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
+<div id="mc-error-modal" class="mc-modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      </div>
+      <div class="modal-body">
+        <h4 class="modal-title">Error During Sign-Up</h4>
+	<p>
+	  There was a problem with your registration request.  Please send an email to <a href="mailto:chris@betterfbo.com">chris@betterfbo.com</a>, and we'll be sure to resolve the problem.
+	</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Begin MailChimp Signup Form -->
 <div id="mc_embed_signup">
-  <form action="http://betterfbo.us3.list-manage1.com/subscribe/post?u=09b4a7bab5a78abdfc44d13ca&amp;id=ef9152a30f"
-	method="post" 
+  <form method="get"
+	action="http://betterfbo.us3.list-manage1.com/subscribe/post-json?u=09b4a7bab5a78abdfc44d13ca&id=ef9152a30f&c=?"
 	id="mc-embedded-subscribe-form"
 	name="mc-embedded-subscribe-form"
 	class="validate"
 	target="_blank"
-	novalidate>  
-    <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+	novalidate> 
 
-    <div class="mc-field-group">
-      <label for="mce-EMAIL">Email Address  <span class="asterisk">*</span></label>
+    <div class="indicates-required"><span class="asterisk"></span> indicates required</div>
+
+    <div class="mc-field-group required">
+      <label for="mce-EMAIL">Email Address</label>
       <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+      <span class="asterisk"></span>
     </div>
 
-    <div class="mc-field-group">
-      <label for="mce-FNAME">First Name </label>
-      <input type="text" value="" name="FNAME" class="" id="mce-FNAME">
+    <div class="mc-field-group required">
+      <label for="mce-FNAME">First Name</label>
+      <input type="text" value="" name="FNAME" class="required" id="mce-FNAME">
+      <span class="asterisk"></span>
     </div>
 
-    <div class="mc-field-group">
-      <label for="mce-LNAME">Last Name  <span class="asterisk">*</span></label>
+    <div class="mc-field-group required">
+      <label for="mce-LNAME">Last Name</label>
       <input type="text" value="" name="LNAME" class="required" id="mce-LNAME">
+      <span class="asterisk"></span>
     </div>
 
     <div class="mc-field-group">
@@ -39,7 +75,7 @@
     <div id="mce-responses" class="clear">
       <div class="response" id="mce-error-response" style="display:none"></div>
       <div class="response" id="mce-success-response" style="display:none"></div>
-    </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    </div>
 
     <div style="position: absolute; left: -5000px;"><input type="text" name="b_09b4a7bab5a78abdfc44d13ca_ef9152a30f" value=""></div>
 
@@ -51,4 +87,43 @@
     </div>
   </form>
 </div>
+
 <!--End mc_embed_signup-->
+
+<script src="{{ root_url }}/javascripts/libs/jquery/jquery.validate.min.js"></script>
+<script type="text/javascript">
+    $('form#mc-embedded-subscribe-form').validate()
+    $(document).ready( function () {
+	var myForm = $('form#mc-embedded-subscribe-form');
+	if ( myForm.length > 0 ) {
+            $('form input[type="submit"]').bind('click', function ( event ) {
+		if ( event ) event.preventDefault();
+		if ( myForm.valid() ) { mcRegister(myForm); }
+            });
+	}
+    });
+    function mcRegister($form) {
+        $.ajax({
+	    type: $form.attr('method'),
+	    url: $form.attr('action'),
+	    data: $form.serialize(),
+	    cache       : false,
+	    dataType    : 'json',
+	    contentType : "application/json; charset=utf-8",
+	    error       : function(err) { alert("Could not connect to the registration server. Please try again later."); },
+	    success     : function(data) {
+		if (data.result != "success") {
+		    mcError($form, data);
+		} else {
+		    mcSuccess($form, data);
+		}
+	    }
+	});
+    }
+    function mcSuccess($form, $data) {
+	$('#mc-success-modal').modal('show');
+    }
+    function mcError($form, $data) {
+        $('#mc-error-modal').modal('show');
+    }
+</script>
