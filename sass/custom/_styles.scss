@@ -380,35 +380,31 @@ body#blog-archive {
   }
 
   #mc_embed_signup {
-    @include border-radius(8px);
-    background: blue;
-    margin: 0 200px;
+    @include border-radius(3px);
+    @extend .center-block;
+
+    background: #f8f8ff;
+    border: 2px dotted #169fff;
+    margin: 20px auto;
+    max-width: 60%;
+    padding: 20px 30px 10px 30px;
 
     form {
-      @extend .form-horizontal;
-
       .mc-field-group {
+	@extend .center-block;
 	margin-bottom: 2px;
 	min-height: auto;
 	padding: 0;
 
 	label, input:not([type=submit]) {
-	  @extend .input-sm;
-	  font-size: 14px;
+	  font-size: 16px;
 	  text-shadow: none;
 	}
 
-	label {
-	  max-width: 30%;
-	}
-
-	input:not([type=submit]) {
-	  width: 60%;
-	}
-
 	input.button, input[type=submit] {
+	  @extend .btn-primary;
 	  font-size: 18px;
-	  margin: 15px auto 0 auto;
+	  margin: 35px auto 0 auto;
 	  padding: 10px 16px;
 	  width: auto;
 	}
