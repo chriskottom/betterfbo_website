@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "A Better FBO"
+title: "A Better FedBizOpps"
 date: 2014-03-20 10:36:05 +0100
 comments: true
 categories: [BetterFBO, FedBizOpps]
