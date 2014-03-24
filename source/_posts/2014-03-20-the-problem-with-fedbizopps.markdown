@@ -49,9 +49,9 @@ And here are [before](https://web.archive.org/web/20090320052949/https://www.fbo
 
 ## What's Next? ##
 
-In the coming weeks as I'm developing BetterFBO, I plan to share some of my ideas and thoughts with those following along - some here on the blog, and some via email.  If you're interested in hearing from me occasionally, please consider signing up for my email list by submitting your name and details in the form below.  I promise never to sell your information or otherwise abuse your trust.
+In the coming weeks as I'm developing BetterFBO, I plan to share some of my ideas and thoughts with those following along - some here on the blog, and some via email.  If you're interested in hearing from me occasionally, please consider signing up for my email list by submitting your name and details in the form below.  I promise never to sell or share your information with anyone or otherwise abuse your trust.
 
-{% include mailchimp_form_page.html %}
+{% include mailchimp_form.html %}
 
 [1]: /images/fbo_before.png
 [2]: /images/fbo_before.png
