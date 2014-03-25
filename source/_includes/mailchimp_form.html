@@ -69,6 +69,7 @@
     function mcSuccess($form, $data) {
         var message = $data.msg;
         $('#notification-container').html('<div class="alert alert-success">' + message + '</div>');
+        _gaq.push(['_trackEvent', 'Mailing List', 'Subscribed']);
     }
     function mcError($form, $data) {
         var message = $data.msg;
