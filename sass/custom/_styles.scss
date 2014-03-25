@@ -379,7 +379,7 @@ body#blog-archive {
     @include border-radius(8px);
   }
 
-  #mc_embed_signup {
+  #contact-form {
     @include border-radius(3px);
     @extend .center-block;
 
@@ -387,9 +387,11 @@ body#blog-archive {
     border: 2px dotted #169fff;
     margin: 20px auto;
     max-width: 60%;
-    padding: 20px 30px 10px 30px;
+    padding: 15px 30px;
 
     form {
+      margin-top: 25px;
+
       .mc-field-group {
 	@extend .center-block;
 	margin-bottom: 2px;
@@ -404,7 +406,7 @@ body#blog-archive {
 	input.button, input[type=submit] {
 	  @extend .btn-primary;
 	  font-size: 18px;
-	  margin: 35px auto 0 auto;
+	  margin: 20px auto 0 auto;
 	  padding: 10px 16px;
 	  width: auto;
 	}

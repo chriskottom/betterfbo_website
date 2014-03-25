@@ -49,9 +49,9 @@ And here are [before](https://web.archive.org/web/20090320052949/https://www.fbo
 
 ## What's Next? ##
 
-In the coming weeks as I'm developing BetterFBO, I plan to share some of my ideas and thoughts with those following along - some here on the blog, and some via email.  If you're interested in hearing from me occasionally, please consider signing up for my email list by submitting your name and details in the form below.  I promise never to sell or share your information with anyone or otherwise abuse your trust.
+Over the coming weeks I'll be developing the first version of BetterFBO and sharing some of the thoughts and ideas that are informing it here on the blog as well as to email subscribers.  I'll also be continuing to engage with professionals and enthusiasts in the government contracting space and trying to nail down the problems that really make them want to tear their hair out.  If this sounds like something that interests you, please subscribe to the [RSS feed](/atom.xml) or sign-up for the mailing list below.
 
-{% include mailchimp_form.html %}
+{% include mailchimp_form_after_post.html %}
 
 [1]: /images/fbo_before.png
 [2]: /images/fbo_before.png
