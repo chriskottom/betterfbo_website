@@ -269,49 +269,16 @@ figure {
       }
     }
   }
+
+  #notification-container {
+    margin-top: 15px;
+  }
 }
 .hate-spam {
   @extend .center-block;
   @extend .text-info;
   margin-top: 10px;
   text-align: center;
-}
-
-
-/* MailChimp modal dialogs */
-.mc-modal {
-  @extend .modal;
-
-  .modal-content {
-    .modal-header, .modal-footer {
-      background-color: adjust-saturation(adjust-lightness($nav-background, 20%), -50%);
-
-      .close {
-	color: $nav-text;
-	margin-top: -10px;
-	opacity: 1.0;
-
-	&:hover {
-	  color: $nav-text-highlight;
-	}
-      }
-    }
-
-    .modal-footer {
-      padding-bottom: 8px;
-      padding-top: 10px;
-    }
-
-    .modal-body {
-      h4 {
-	margin-bottom: 10px;
-      }
-
-      p {
-	margin: 0 0 10px 0;
-      }
-    }
-  }
 }
 
 
