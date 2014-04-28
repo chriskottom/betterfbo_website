@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "FB-Oh-No #1: Don't Break the Browser"
+title: "Don't Break the Browser"
 date: 2014-03-27 13:47:46 +0100
 comments: true
 categories: [BetterFBO, FedBizOpps, FB-Oh-No, back button, browser, tabs]
