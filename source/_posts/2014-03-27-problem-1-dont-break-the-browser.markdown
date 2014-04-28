@@ -1,13 +1,15 @@
 ---
 layout: post
-title: "Don't Break the Browser"
+title: "Problem 1: Don't Break the Browser"
 date: 2014-03-27 13:47:46 +0100
 comments: true
 categories: [BetterFBO, FedBizOpps, FB-Oh-No, back button, browser, tabs]
 ---
 {% img right /images/fbo_search_results.png 500 FedBizOpps.com search results %}
 
-Searching [FedBizOpps](https://www.fbo.gov) for new opportunities is probably the most common use case for visitors of the site.  Performing a basic search would likely include:
+To kick things off, I'd like to call out some of the problems I and others have noted while using [FedBizOpps](https://www.fbo.gov).  I'll do this over the coming weeks in a series of posts, each of which will take on one of the problems.
+
+Searching for new opportunities is probably the most common use case for visitors of the site.  Performing a basic search would likely include:
 
 1. Request a search based on criteria entered into the search form.
 2. Scan the list of results looking for relevant items.
@@ -17,7 +19,7 @@ Searching [FedBizOpps](https://www.fbo.gov) for new opportunities is probably th
 
 Unfortunately, the application has been implemented in a way that complicates this most common of use cases.<!--more-->
 
-## Problem #1: Broken Back Button ##
+## Issue: Broken Back Button ##
 
 If I attempt to use my web browser's back button to navigate from the opportunity detail page to the search results listing, the application fails to display anything and instead I see a page like the one below.
 
@@ -25,7 +27,7 @@ If I attempt to use my web browser's back button to navigate from the opportunit
 
 Don't break the back button - it's one of the cardinal rules of web application design, but it's one that's often ignored by large, complex websites.  This is probably a minor annoyance to most users, but it's just one symptom of the development team's decision not to embed search criteria directly in the request link.  That leads to other problems that include the inability to **bookmark searches** or to **copy and paste a search link from the browser's address bar** into an email to share with a friend or co-worker as well as **adding difficulty for search engines to index the site**.
 
-## Problem #2: No Support for Multiple Windows ##
+## Issue: No Support for Multiple Windows ##
 
 Most modern web browsers will allow you to right-click on a link and ask to open it in a new tab (or window), so instead of clicking through to one opportunity, I might attempt to right-click and open a number of opportunity detail pages in their own tabs and review them in bulk.  This seems to work just fine, but if I then return to the search form and try to change some of the parameters - agency, NAICS code, notice type, or even just the ordering of results - the application is unable to service the request and instead displays the last opportunity detail page I opened.
 
@@ -37,3 +39,5 @@ Most seasoned users of the application will modify their searching workflow to u
 
 The behaviors described in this post might seem like minor annoyances or just "how the system works", but in fact they show a disregard for the traditions of the web as well as a lack of respect for you and your time.
 
+
+Has this behavior caused you problems or cost you valuable time?  If so, I'd love to hear about it.  Drop me an email at <chris@betterfbo.com> and let me know.
