@@ -1,5 +1,7 @@
 ### TEMPORARY POST-MIGRATION REDIRECTS ###R
-RedirectMatch   302   ^\/blog\/2014\/fb\-oh\-no\-number\-1\-dont\-break\-the\-browser(.*) /blog/2014/problem-1-dont-break-the-browser/
+RedirectMatch   302   ^\/blog\/2014\/fb\-oh\-no\-number\-1\-dont\-break\-the\-browser(.*) /blog/2014/fbo-problem-1-dont-break-the-browser/
+RedirectMatch   302   ^\/blog\/2014\/problem\-1\-dont\-break\-the\-browser(.*) /blog/2014/fbo-problem-1-dont-break-the-browser/
+RedirectMatch   302   ^\/blog\/2014\/problem\-2\-page\-links\-disrupt\-browsing\-flow(.*) /blog/2014/fbo-problem-2-page-links-disrupt-workflow/
 
 ### CACHING ###
 ExpiresActive On

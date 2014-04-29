@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Problem 2: Page Links Disrupt Browsing Flow"
+title: "FBO Problem 2: Page Links Disrupt Workflow"
 date: 2014-04-29 09:05:14 +0200
 comments: true
 categories: [BetterFBO, FedBizOpps, FB-Oh-No, search, search results, paging, pagination, UX]
@@ -33,6 +33,6 @@ All of that said, there are certain guidelines that should be followed when impl
 * The application should deliver visible feedback to the user when new results are being loaded.  In a perfect world, the feedback would include information about the current position in the overall list - e.g. "Loading results 21-40 of 68".
 * The application should provide easy options for jumping to the top or bottom of the list.
 * Common site elements such as navigation should be visible or at least reachable regardless of current position in the list.
-* [Don't break the browser.](http://betterfbo.com/blog/2014/problem-1-dont-break-the-browser/)  Ideally, clicking the back button and forward again should reload the list in its previous state with respect to position and loaded results.
+* [Don't break the browser.](/blog/2014/fbo-problem-1-dont-break-the-browser/)  Ideally, clicking the back button and forward again should reload the list in its previous state with respect to position and loaded results.
 
-Pagination will be around for years to come, but you won't find it anywhere on [BetterFBO](http://betterfbo.com/).  The search results listings will be engineered around a page-free viewing experience as another way of helping you to more easily navigate opportunity content.
+Pagination will be around for years to come, but you won't find it anywhere on [BetterFBO](http://betterfbo.com/).  The search results listings will be engineered around a **page-free viewing experience** that simplifies browsing for the user and **optimizes for viewing on mobile devices and tablets**.
