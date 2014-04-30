@@ -100,7 +100,7 @@ header[role=banner] {
 
 /* Page header should be centered and set off from text */
 .page-header {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   text-align: center;
 
   p.meta {
@@ -113,7 +113,7 @@ header[role=banner] {
     text-shadow: 1px 1px 1px #ccc;
 
     &.entry-title {
-      font-size: 36px;
+      font-size: 34px;
 
       a {
 	color: $header;
