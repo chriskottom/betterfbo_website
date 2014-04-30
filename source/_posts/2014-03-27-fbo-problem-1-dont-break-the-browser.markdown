@@ -35,9 +35,10 @@ So what happened?  [FBO](https://www.fbo.gov) stores information about the last 
 
 ## Lesson: Follow The Principle of Least Surprise #
 
-Most seasoned users of the application will modify their searching workflow to use the "Return to Opportunities List" button provided on the opportunity detail page, but minor inconveniences in the user experience like these indicate a deeper problem.  Good software always goes the extra mile to match the expectations and experience of its users.  Whenever it fails to do so, whatever the reasons and justifications might be, it shifts responsibility for understanding how the system works from the developer to the user.  This is always a bad tradeoff, and it's been recognized as such since well before [FedBizOpps](https://www.fbo.com) was built.
+Most seasoned users of the application will modify their searching workflow to use the "Return to Opportunities List" button provided on the opportunity detail page, but minor inconveniences in the user experience like these indicate a deeper problem.  Good software always goes the extra mile to match the expectations and experience of its users.  Whenever it fails to do so, whatever the reasons and justifications might be, it shifts responsibility for understanding how the system works from the developer to the user.  This is always a bad tradeoff, and it's been recognized as such since well before [FedBizOpps](https://www.fbo.gov) was built.
 
 The behaviors described in this post might seem like minor annoyances or just "how the system works", but in fact they show a disregard for the traditions of the web as well as a lack of respect for you and your time.
 
+**Note:** Jason Hull points to a similar set of issues in a 2008 post [New FedBizOpps A Step In The Right Direction](http://www.opensourceconnections.com/2008/04/09/new-fedbizopps-a-step-in-the-right-direction/).  The article gives some observations on the (at that time) newly released re-work of [FedBizOpps](https://www.fbo.gov/).  Of the criticisms he mentions, most are still affecting site usability today.
 
 Has this behavior caused you problems or cost you valuable time?  If so, I'd love to hear about it.  Drop me an email at <chris@betterfbo.com> and let me know.
