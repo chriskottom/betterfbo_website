@@ -144,18 +144,28 @@ p.meta {
 
 
 /* Layouts for images and figures / images with captions */
-.page-content > img, .page-content > figure {
+.entry-content > img, .entry-content > figure {
   border-radius: 2px;
-  margin-bottom: 20px;
-  margin-top: 20px;
-}
-figure {
+  margin: 20px;
+
   &.center {
     display: table;
+    margin: 20px 0;
     text-align: center;
   }
 
+  &.left {
+    float: left;
+    margin: 20px 50px 20px 0;
+  }
+
+  &.right {
+    float: right;
+    margin: 20px 0 20px 50px;
+  }
+
   figcaption {
+    color: #966;
     display: block;
     font-size: 0.85em;
     font-weight: bold;
